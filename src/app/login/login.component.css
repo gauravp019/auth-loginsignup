@@ -1,0 +1,24 @@
+form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 200px;
+}
+form{
+    margin-top: 100px;
+}
+form input{
+    width: 600px;
+}
+h4{
+    margin-left: 620px;
+    margin-top: 25px;
+}
+ h4 small{
+     text-decoration: underline;
+ }
+button{
+    margin-top: 50px;
+    margin-left: 700px;
+}

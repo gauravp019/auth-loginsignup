@@ -1,0 +1,29 @@
+<p>signup works!</p>
+<form [formGroup]="signupForm" (ngSubmit)='signup(signupForm.value)'>
+    <div class="mb-3 row">
+        <div class="col-sm-10">
+            <label>Full Name
+                <input type="text" class="form-control" formControlName="name" placeholder="Full Name">
+            </label>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10">
+            <label>Email
+                <input type="text" class="form-control" formControlName='email' placeholder="Enter Email">
+            </label>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10">
+            <label>Password
+                <input type="password" class="form-control" formControlName='password' placeholder="Enter Password">
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-info">Sign up</button>
+</form>
+<h4>
+    Already have an Account ? <small class="text-muted" Style='cursor: pointer;' [routerLink]="['/login']">Sign
+        in</small>
+</h4>
