@@ -6,6 +6,9 @@ form div{
     margin-left: 200px;
 }
 form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 100px;
 }
 form input{
@@ -19,6 +22,5 @@ h4{
      text-decoration: underline;
  }
 button{
-    margin-top: 50px;
-    margin-left: 700px;
+    margin-top: 25px;
 }

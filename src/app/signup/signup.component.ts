@@ -22,8 +22,13 @@ export class SignupComponent implements OnInit {
   }
   signup(val) {
     console.log(val);
-    this.alldata.signupList(val.name, val.email, val.password)
-    this.router.navigate(['/login']);
+    if (val.name == '' || val.email == '' || val.password == '') {
+      this.router.navigate(['/signup']);
+    }
+    else {
+      this.alldata.signupList(val.name, val.email, val.password)
+      this.router.navigate(['/login']);
+    }
 
   }
 }

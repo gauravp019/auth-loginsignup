@@ -5,11 +5,12 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 })
 export class AuthService {
   userdata: AngularFireList<any>;
+  public isloggedIn: boolean;
+
   constructor(private angularFireAuth: AngularFireDatabase) { }
-  // getTaskList() {
-  //   this.taskList = this.firebasedb.list('taskList');
-  //   return this.taskList;
-  // }
+  isuserrights(): boolean {
+    return true;
+  }
   allData() {
     this.userdata = this.angularFireAuth.list('AllLogins');
     return this.userdata
@@ -22,13 +23,8 @@ export class AuthService {
       email: email,
       password: password
     })
-  }
-
-  scanUser(email: string, password: string) {
-    // var userdatas = this.angularFireAuth.list('AllLogins');
-    console.log(email, password);
-
-    console.log(this.userdata);
+    return false;
 
   }
+
 }

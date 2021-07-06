@@ -31,9 +31,20 @@ export class LoginComponent implements OnInit {
         console.log(element)   //here element is object
         this.x = element.payload.toJSON();
         console.log(this.x) //now in string
-        if (this.x.email == val.email && this.x.password == val.password) {
-          this.router.navigate(['/dashboard']);
+        if (val.email == 'admin' || val.password == 'admin') {
+          this.router.navigate(['/admin-dashboard']);
+          this.alldata.isloggedIn = false;
+
+
         }
+        else if (this.x.email == val.email && this.x.password == val.password) {
+          this.alldata.isloggedIn = true;
+          this.router.navigate(['/dashboard']);
+        } else {
+          this.alldata.isloggedIn = false;
+
+        }
+
       })
     })
   }
