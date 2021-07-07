@@ -5,12 +5,10 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 })
 export class AuthService {
   userdata: AngularFireList<any>;
-  public isloggedIn: boolean;
-
+  // redirectUrl: string;
+  logindone: boolean;
   constructor(private angularFireAuth: AngularFireDatabase) { }
-  isuserrights(): boolean {
-    return true;
-  }
+
   allData() {
     this.userdata = this.angularFireAuth.list('AllLogins');
     return this.userdata
@@ -23,8 +21,9 @@ export class AuthService {
       email: email,
       password: password
     })
-    return false;
+    // return false;
 
   }
+
 
 }

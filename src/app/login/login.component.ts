@@ -33,15 +33,12 @@ export class LoginComponent implements OnInit {
         console.log(this.x) //now in string
         if (val.email == 'admin' || val.password == 'admin') {
           this.router.navigate(['/admin-dashboard']);
-          this.alldata.isloggedIn = false;
-
+          this.alldata.logindone = true;
 
         }
         else if (this.x.email == val.email && this.x.password == val.password) {
-          this.alldata.isloggedIn = true;
           this.router.navigate(['/dashboard']);
-        } else {
-          this.alldata.isloggedIn = false;
+          this.alldata.logindone = true;
 
         }
 
